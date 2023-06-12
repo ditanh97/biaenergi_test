@@ -33,16 +33,7 @@ Select USA.NAME, EU.NAME From USA,  EU
 | Cindy            | Thomas           | 
 
 
-===================
-USA.NAME | EU.NAME
-===================
-Thomas   | Francois
--------------------
-Thomas   | Thomas
--------------------
-Cindy    | Francois
--------------------
-Cindy    | Thomas
+
 
 
 - The concern with this design if it required to not only store customer data in usa or eu, but need the data in different region or country. So it is not optimized to add new table just to store the same data (which is basically they store same data. e.i id and name) 
