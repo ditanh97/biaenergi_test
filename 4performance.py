@@ -1,3 +1,6 @@
+import random
+import time
+
 def intersect (bagA, bagB):
     result = []
     for o in bagA:
@@ -5,26 +8,28 @@ def intersect (bagA, bagB):
             result.append(o)
     return result
 
-def intersect_modif (bagA, bagB):
-    result = []
-    mainBag = bagA if len(bagA) < len(bagB) else bagB
-    subBag = bagA if len(bagA) > len(bagB) else bagB
-    print(mainBag)
-    print(subBag)
-    for o in mainBag:
-        if o in subBag:
-            result.append(o)
-    return result
+bagB = random.sample(range(1000000), 100000)
+bagA = random.sample(range(1000000), 1000)
 
 
-bagA = {1,2,4,56575,232,24,5}
-bagB = {43,564,2,4,653,6}
+start_time = time.time()
+intersect_result = intersect(bagA, bagB)
+print(intersect_result)
+intersect_time = time.time() - start_time
 
-print(intersect(bagA, bagB))
-print(intersect_modif(bagA, bagB))
-print(bagA.intersection(bagB))
-print(min(5,4))
 
+setA = set(bagA)
+setB = set(bagB)
+
+
+start_time = time.time()
+set_intersect_result = list(setA.intersection(setB))
+print(set_intersect_result)
+set_intersect_time = time.time() - start_time
+
+
+print(f"Time exec for intersect function: {intersect_time} s")
+print(f"Time exec for set.intersection: {set_intersect_time} s")
 
 """
 https://stackoverflow.com/questions/38559245/how-to-speed-up-4-million-set-intersections
