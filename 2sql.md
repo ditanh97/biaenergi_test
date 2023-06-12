@@ -1,17 +1,36 @@
 # 2. SQL
 Answer:
-===================
-USA.NAME | EU.NAME
-===================
-Thomas   | Thomas
+
+```
+Select USA.NAME, EU.NAME From USA, EU Where USA.ID = EU.ID
+```
+
+| USA.NAME         | EU.NAME          | 
+| ---------------- | ---------------- | 
+| Thomas           | Thomas           | 
+
+```
+Select USA.NAME, EU.NAME From USA left join EU Where USA.ID = EU.ID
+```
 
 
-===================
-USA.NAME | EU.NAME
-===================
-Thomas   | Thomas
--------------------
-Cindy    | Null
+| USA.NAME         | EU.NAME          | 
+| ---------------- | ---------------- | 
+| Thomas           | Thomas           | 
+| Cindy            | Null             | 
+
+
+```
+Select USA.NAME, EU.NAME From USA,  EU
+```
+
+
+| USA.NAME         | EU.NAME          | 
+| ---------------- | ---------------- | 
+| Thomas           | Francois         | 
+| Thomas           | Thomas           | 
+| Cindy            | Francois         | 
+| Cindy            | Thomas           | 
 
 
 ===================
